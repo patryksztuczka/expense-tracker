@@ -5,8 +5,6 @@ import { routePaths } from "../constants";
 
 const PrivateRoute = () => {
   const auth = useAuth();
-  console.log("PrivateRoute", { auth });
-
   return auth?.session?.user ? <Outlet /> : <Navigate to={routePaths.login} />;
 };
 

@@ -5,7 +5,6 @@ import { routePaths } from "../constants";
 
 const GuestRoute = () => {
   const auth = useAuth();
-  console.log("GuestRoute", { auth });
   return auth?.session?.user ? <Navigate to={routePaths.home} /> : <Outlet />;
 };
 

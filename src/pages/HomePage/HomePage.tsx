@@ -12,7 +12,7 @@ const HomePage = () => {
     }
   };
   return (
-    <div>
+    <div className="text-white">
       HomePage
       <button onClick={logout}>Logout</button>
     </div>
