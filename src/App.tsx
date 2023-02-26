@@ -1,5 +1,7 @@
+import Providers from "./providers";
+
 function App() {
-  return <div className="bg-blue-200">Pam</div>;
+  return <Providers />;
 }
 
 export default App;
