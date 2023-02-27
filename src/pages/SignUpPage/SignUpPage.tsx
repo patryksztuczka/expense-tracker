@@ -52,10 +52,13 @@ const SignUpPage = () => {
   return (
     <SwitchFormAnimation>
       <form
-        className="flex w-full max-w-xl flex-col gap-4 md:rounded-lg md:bg-zinc-900 md:px-6 md:py-12"
+        className="flex w-full max-w-xl flex-col gap-6 md:rounded-lg md:bg-zinc-900 md:px-6 md:py-12"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="flex flex-col gap-4 md:flex-row">
+        <h1 className="mb-4 text-center text-3xl font-bold text-white">
+          Sign up.
+        </h1>
+        <div className="flex flex-col gap-6 md:flex-row">
           <Controller
             name="firstName"
             control={control}
@@ -69,10 +72,11 @@ const SignUpPage = () => {
             render={({ field: { value, onChange } }) => (
               <Input
                 type="text"
-                placeholder="First name"
+                placeholder="Enter your first name"
                 value={value}
                 onChange={onChange}
                 error={errors.firstName?.message}
+                label="First name"
               />
             )}
           />
@@ -89,10 +93,11 @@ const SignUpPage = () => {
             render={({ field: { value, onChange } }) => (
               <Input
                 type="text"
-                placeholder="Last name"
+                placeholder="Enter your last name"
                 value={value}
                 onChange={onChange}
                 error={errors.lastName?.message}
+                label="Last name"
               />
             )}
           />
@@ -110,10 +115,11 @@ const SignUpPage = () => {
           render={({ field: { value, onChange } }) => (
             <Input
               type="text"
-              placeholder="E-mail"
+              placeholder="Enter your email"
               value={value}
               onChange={onChange}
               error={errors.email?.message}
+              label="Email"
             />
           )}
         />
@@ -130,10 +136,11 @@ const SignUpPage = () => {
           render={({ field: { value, onChange } }) => (
             <Input
               type="password"
-              placeholder="Password"
+              placeholder="Pick a strong password"
               value={value}
               onChange={onChange}
               error={errors.password?.message}
+              label="Password"
             />
           )}
         />
@@ -150,10 +157,11 @@ const SignUpPage = () => {
           render={({ field: { value, onChange } }) => (
             <Input
               type="password"
-              placeholder="Confirm password"
+              placeholder="Repeat password"
               value={value}
               onChange={onChange}
               error={errors.confirmPassword?.message}
+              label="Confirm password"
             />
           )}
         />
@@ -161,7 +169,7 @@ const SignUpPage = () => {
         <span className=" text-center text-sm text-white">
           Already have an account?{" "}
           <Link to={routePaths.login} className="font-semibold">
-            Login
+            Log in
           </Link>
         </span>
       </form>
