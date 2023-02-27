@@ -42,9 +42,12 @@ const LoginPage = () => {
   return (
     <SwitchFormAnimation>
       <form
-        className="flex w-full max-w-xl flex-col gap-4 rounded-lg md:bg-zinc-900 md:px-6 md:py-12"
+        className="flex w-full max-w-xl flex-col gap-6 rounded-lg md:bg-zinc-900 md:px-6 md:py-12"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <h1 className="mb-4 text-center text-3xl font-bold text-white">
+          Log in.
+        </h1>
         <Controller
           name="email"
           control={control}
@@ -58,10 +61,11 @@ const LoginPage = () => {
           render={({ field: { value, onChange } }) => (
             <Input
               type="text"
-              placeholder="E-mail"
+              placeholder="Enter your email"
               value={value}
               onChange={onChange}
               error={errors.email?.message}
+              label="Email"
             />
           )}
         />
@@ -78,14 +82,15 @@ const LoginPage = () => {
           render={({ field: { value, onChange } }) => (
             <Input
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               value={value}
               onChange={onChange}
               error={errors.password?.message}
+              label="Password"
             />
           )}
         />
-        <Button type="submit" text="Login" isLoading={isLoading} />
+        <Button type="submit" text="Log in" isLoading={isLoading} />
         <span className=" text-center text-sm text-white">
           Don't have an account?{" "}
           <Link to={routePaths.signup} className="font-semibold">

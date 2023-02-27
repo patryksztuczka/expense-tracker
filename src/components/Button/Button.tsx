@@ -6,7 +6,7 @@ const Button = ({ type, text, onClick, isLoading }: IButtonProps) => {
     <button
       type={type}
       onClick={onClick}
-      className="rounded-lg bg-zinc-800 p-2 font-semibold text-white hover:bg-zinc-700"
+      className="rounded-xl bg-green-500 p-4 font-semibold text-white hover:bg-green-600"
     >
       {!isLoading ? text : <Spinner />}
     </button>
