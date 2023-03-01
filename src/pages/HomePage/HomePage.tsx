@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { supabase } from "../../client";
 import { useAuth } from "../../context/AuthContext/AuthContext";
+import { useBoundStore } from "../../zustand/store";
 
 const HomePage = () => {
   const auth = useAuth();
@@ -11,6 +13,14 @@ const HomePage = () => {
       console.log(error);
     }
   };
+
+  const getExpenses = useBoundStore((state) => state.getExpenses);
+  const isLoading = useBoundStore((state) => state.isLoading);
+
+  useEffect(() => {
+    getExpenses();
+  }, []);
+
   return (
     <div className="text-white">
       HomePage
